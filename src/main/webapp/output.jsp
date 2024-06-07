@@ -73,7 +73,7 @@
 	</table>
 	<script>
 		document.getElementById('backButton').onclick = function() {
-			location.href = ('index.jsp');
+			location.href = ('/index.jsp');
 		}
 	</script>
 </body>
