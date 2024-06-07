@@ -3,6 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body> 
+=======
   <head>
     <meta charset="UTF-8" />
     <title>Index</title>
@@ -12,6 +20,7 @@
       * {
         box-sizing: border-box;
       }
+>>>>>>> c1df226e22bb1328a3594c9e5b71ce9cea0d58e3
 
       .container div {
         border: 1px solid black;
