@@ -7,6 +7,7 @@ prefix="c" %>
   <head>
     <meta charset="UTF-8" />
     <title>Input Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   </head>
   <style>
     * {
@@ -46,7 +47,7 @@ prefix="c" %>
     </div>
     
     <script>
-    		$("#back").on("click", funtion(){
+    		$("#back").on("click", function(){
     			location.href = "/index.jsp";
     		})
     
