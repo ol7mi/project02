@@ -30,7 +30,7 @@
 			<td>${dto.write_date}</td>
 		</tr>
 		</c:forEach>
-		
+		 
 		<tr>
 			<form action='delete.movies' method='get'>
 				<th colspan='4'>
