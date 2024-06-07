@@ -64,4 +64,29 @@ public class MoviesDAO {
 			
 		return list;
 	}
+	public void delete(int seq) {
+		String sql="delete from movies where seq=?";
+		try (Connection con=this.getConnection();
+				PreparedStatement pstat=con.prepareStatement(sql)){
+			pstat.setInt(1, seq);
+			pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void update(MoviesDTO dto) {
+		String sql="update movies set title=?, ganre=? where seq=?";
+		try (Connection con=this.getConnection();
+				PreparedStatement pstat=con.prepareStatement(sql)){
+			pstat.setString(1, dto.getTitle());
+			pstat.setString(2, dto.getGanre());
+			pstat.setInt(1, dto.getSeq());
+			pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 }
