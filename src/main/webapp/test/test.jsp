@@ -10,7 +10,7 @@
 </head>
 <body>
 
-git ignore에 추가
+ git ignore에 추가
 /src/main/java/test/TestController.java
 /src/main/webapp/test/test.jsp
 
