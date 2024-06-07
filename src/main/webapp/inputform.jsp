@@ -36,10 +36,10 @@ prefix="c" %>
 
   <body>
     <div class="container">
-      <form action="input.movies" method="get">
+      <form action="/input.movies" method="get">
         <div class="box">
-          <input type="text" placeholder="작성자" name="writer" />
-          <input type="text" placeholder="내용" name="message" />
+          <input type="text" placeholder="작성자" name="title" />
+          <input type="text" placeholder="내용" name="genre" />
           <button type="submit" id="submit">제출</button>
           <button type="button" id="back">뒤로가기</button>
         </div>
