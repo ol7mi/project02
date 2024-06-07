@@ -13,13 +13,13 @@
 <body>
 	<table border=1 align='center'>
 		<tr>
-			<th colspan='3'>Movie List</th>
+			<th colspan='4'>Movie List</th>
 		</tr>
 		<tr>
 			<th>ID</th>
 			<th>영화제목</th>
 			<th>장르</th>
-			<th>영화 등록</th>
+			<th>영화 등록일</th>
 		</tr>
 		
 		<c:forEach var="dto" items="${list}">
@@ -31,7 +31,50 @@
 		</tr>
 		</c:forEach>
 		
+		<tr>
+			<form action='delete.movies' method='get'>
+				<th colspan='4'>
+					<input type='text' placeholder='id' name='seq'>
+					<button>Delete</button>
+				</th>
+			</form>
+		</tr>
 		
+		<tr style="background-color: cadetblue">
+			<form action='update.movies' method='get'>
+				<th colspan='4'>
+					<input type='text' placeholder='id' name='seq'>
+				</th>
+				</tr>
+					
+				<tr style="background-color: cadetblue">
+					<th colspan='4'>
+					<input type='text' placeholder='title' name='title'>
+					</th>
+				</tr>
+					
+				<tr style="background-color: cadetblue">
+					<th colspan='4'>
+						<input type='text' placeholder='genre' name='genre'>
+					</th>
+				</tr>
+				
+				<tr style="background-color: cadetblue">
+					<th colspan='4'>
+						<button>Update</button>
+				</th>
+			</form>
+		</tr>
+		<tr>
+			<th colspan='4'>
+			<button id='backButton'>Back</button>
+		</th>
+		</tr>
 	</table>
+	<script>
+		document.getElementById('backButton').onclick = function() {
+			location.href = ('index.jsp');
+		}
+	</script>
 </body>
 </html>
