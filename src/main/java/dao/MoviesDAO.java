@@ -33,7 +33,7 @@ public class MoviesDAO {
 		try (Connection con=this.getConnection();
 				PreparedStatement pstat=con.prepareStatement(sql)){
 			pstat.setString(1, dto.getTitle());
-			pstat.setString(2, dto.getGanre());
+			pstat.setString(2, dto.getGenre());
 			pstat.executeUpdate();
 			
 		} catch (Exception e) {
@@ -51,9 +51,9 @@ public class MoviesDAO {
 			while(rs.next()) {
 				int seq=rs.getInt(1);
 				String title=rs.getString(2);
-				String ganre=rs.getString(3);
+				String genre=rs.getString(3);
 				Timestamp write_date=rs.getTimestamp(4);
-				list.add(new MoviesDTO(seq,title,ganre,write_date));
+				list.add(new MoviesDTO(seq,title,genre,write_date));
 				
 			}
 			
@@ -63,5 +63,30 @@ public class MoviesDAO {
 		
 			
 		return list;
+	}
+	public void delete(int seq) {
+		String sql="delete from movies where seq=?";
+		try (Connection con=this.getConnection();
+				PreparedStatement pstat=con.prepareStatement(sql)){
+			pstat.setInt(1, seq);
+			pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void update(MoviesDTO dto) {
+		String sql="update movies set title=?, genre=? where seq=?";
+		try (Connection con=this.getConnection();
+				PreparedStatement pstat=con.prepareStatement(sql)){
+			pstat.setString(1, dto.getTitle());
+			pstat.setString(2, dto.getGenre());
+			pstat.setInt(1, dto.getSeq());
+			pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 }
