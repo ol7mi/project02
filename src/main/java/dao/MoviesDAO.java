@@ -82,7 +82,7 @@ public class MoviesDAO {
 				PreparedStatement pstat=con.prepareStatement(sql)){
 			pstat.setString(1, dto.getTitle());
 			pstat.setString(2, dto.getGenre());
-			pstat.setInt(1, dto.getSeq());
+			pstat.setInt(3, dto.getSeq());
 			pstat.executeUpdate();
 			
 		} catch (Exception e) {
